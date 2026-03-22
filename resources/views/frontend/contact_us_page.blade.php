@@ -52,7 +52,7 @@
         $content = json_decode($page->getTranslation('content', $lang));
     @endphp
     <div class="container">
-        <div class="" style="background-color: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.02) }}">
+        <div class="" style="background-color: {{ hex2rgba(get_setting('base_color', '#1a2332'), 0.02) }}">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left">
                     <div class="p-3 p-md-4 p-xl-5">

@@ -67,27 +67,7 @@
                 style="color: {{ $topHeaderTextColor }}">
                 <ul class="list-inline mb-0 h-100 d-flex justify-content-end align-items-center">
                     @if (get_setting('vendor_system_activation') == 1)
-                        <!-- Seller Dropdown and Helpline -->
-                        <li class="list-inline-item d-flex">
-
-                            <!-- Become a Seller Dropdown -->
-                            <div class="dropdown">
-                                <a href="{{ route(get_setting('seller_registration_verify') === '1' ? 'shop-reg.verification' : 'shops.create') }}"
-                                    class="fs-12 dropdown-toggle top-text-color-visibility"
-                                    style="color: {{ $topHeaderTextColor }}" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    {{ translate('Become a Seller !') }}
-                                </a>
-
-                                <!-- Dropdown Menu -->
-                                <div class="dropdown-menu fs-12 p-0 mt-1">
-                                    <a class="dropdown-item py-2 px-2 text-dark"
-                                        href="{{ route('seller.login') }}">
-                                        {{ translate('Login to Seller') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
+                        {{-- Become a Seller link removed as per user request --}}
                     @endif
                     @if (get_setting('helpline_number'))
                         <li class="list-inline-item ml-3 pl-3 mr-0 pr-0 top-text-color-visibility"
@@ -606,10 +586,10 @@
                                                 transform="translate(-216.534 -160)">
                                                 <path id="Subtraction_192" data-name="Subtraction 192"
                                                     d="M12052.535,2920a8,8,0,0,1-4.569-14.567l.721.72a7,7,0,1,0,7.7,0l.721-.72a8,8,0,0,1-4.567,14.567Z"
-                                                    transform="translate(-11803.999 -2367)" fill="#d43533" />
+                                                    transform="translate(-11803.999 -2367)" fill="#1a2332" />
                                             </g>
                                             <rect id="Rectangle_19022" data-name="Rectangle 19022" width="1" height="8"
-                                                rx="0.5" transform="translate(31.5 377)" fill="#d43533" />
+                                                rx="0.5" transform="translate(31.5 377)" fill="#1a2332" />
                                         </g>
                                     </svg>
                                     <span

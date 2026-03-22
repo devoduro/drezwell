@@ -58,9 +58,9 @@
             --soft-white: #b5b5bf;
             --dark: #292933;
             --soft-dark: #1b1b28;
-            --primary: {{ get_setting('base_color', '#d43533') }};
+            --primary: {{ get_setting('base_color', '#1a2332') }};
             --hov-primary: {{ get_setting('base_hov_color', '#9d1b1a') }};
-            --soft-primary: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.15) }};
+            --soft-primary: {{ hex2rgba(get_setting('base_color', '#1a2332'), 0.15) }};
         }
         body{
             font-family: {!! !empty(get_setting('system_font_family')) ? get_setting('system_font_family') : "'Public Sans', sans-serif" !!}, sans-serif;

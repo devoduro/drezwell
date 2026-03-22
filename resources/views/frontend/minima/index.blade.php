@@ -154,7 +154,7 @@
                                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                         </div>
                                         <div class="absolute-bottom-left has-transition h-80px w-100 d-flex flex-column align-items-center justify-content-center"
-                                            style="background-color: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.95) }}">
+                                            style="background-color: {{ hex2rgba(get_setting('base_color', '#1a2332'), 0.95) }}">
                                             <div class="w-100 text-center">
                                                 <a class="home-category-name animate-underline-white fs-16 fw-700 text-{{ get_setting('featured_categories_text') }}"
                                                     href="{{ route('products.category', $category->slug) }}"

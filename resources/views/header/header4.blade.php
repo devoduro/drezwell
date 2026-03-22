@@ -608,10 +608,10 @@
                                                 transform="translate(-216.534 -160)">
                                                 <path id="Subtraction_192" data-name="Subtraction 192"
                                                     d="M12052.535,2920a8,8,0,0,1-4.569-14.567l.721.72a7,7,0,1,0,7.7,0l.721-.72a8,8,0,0,1-4.567,14.567Z"
-                                                    transform="translate(-11803.999 -2367)" fill="#d43533" />
+                                                    transform="translate(-11803.999 -2367)" fill="#1a2332" />
                                             </g>
                                             <rect id="Rectangle_19022" data-name="Rectangle 19022" width="1" height="8"
-                                                rx="0.5" transform="translate(31.5 377)" fill="#d43533" />
+                                                rx="0.5" transform="translate(31.5 377)" fill="#1a2332" />
                                         </g>
                                     </svg>
                                     <span

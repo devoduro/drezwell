@@ -16,9 +16,9 @@
                 <div class="col-xxl-3 col-lg-4">
                     <div class="d-flex align-items-center right-content">
                         <div class="py-3 py-lg-4 px-3 px-xl-5 flex-grow-1">
-                            <!-- Site Icon -->
-                            <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
+                            <!-- Site Logo -->
+                            <div class="mb-4 mx-auto mx-lg-0" style="max-width: 180px;">
+                                <img src="{{ uploaded_asset(get_setting('header_logo')) }}" alt="{{ env('APP_NAME') }}" class="img-fluid" style="max-height: 60px; width: auto;">
                             </div>
                             <!-- Titles -->
                             <div class="text-center text-lg-left">

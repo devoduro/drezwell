@@ -103,27 +103,28 @@ body { font-family: 'Montserrat', sans-serif !important; }
 @endphp
 @if(count($all_products) > 0)
     <section class="new-in-section" style="background: #fff; padding: 80px 20px; margin: 0;">
-        <div style="max-width: 1400px; margin: 0 auto;">
+        <div style="max-width: 1600px; margin: 0 auto;">
             <!-- Title -->
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 56px; font-weight: 900; text-transform: uppercase; letter-spacing: 6px; color: #000; margin: 0;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 72px; font-weight: 900; text-transform: uppercase; letter-spacing: 12px; color: #000; margin: 0; line-height: 1;">
                     NEW IN
                 </h2>
             </div>
-            <!-- Products Carousel -->
-            <div class="aiz-carousel new-in-carousel" data-items="5" data-xl-items="5" data-lg-items="4" data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
-                @foreach($all_products as $product)
-                    <div class="carousel-box new-in-item">
-                        <a href="{{ route('product', $product->slug) }}" style="position: relative; height: 550px; overflow: hidden; display: block; text-decoration: none; background: #f9f9f9; transition: all 0.3s ease;">
-                            <img src="{{ uploaded_asset($product->thumbnail_img) }}" alt="{{ $product->getTranslation('name') }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                            <!-- Product Info Overlay -->
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%); padding: 30px 20px 20px;">
-                                <!-- Product Name -->
-                                <div style="color: #fff; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+            <!-- Products Grid -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;">
+                @foreach($all_products->take(15) as $product)
+                    <div class="new-in-item">
+                        <a href="{{ route('product', $product->slug) }}" style="display: block; text-decoration: none; background: #fff; border: 1px solid #e5e5e5; transition: all 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+                            <!-- Product Image -->
+                            <div style="position: relative; width: 100%; padding-bottom: 145%; overflow: hidden; background: #fafafa;">
+                                <img src="{{ uploaded_asset($product->thumbnail_img) }}" alt="{{ $product->getTranslation('name') }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            </div>
+                            <!-- Product Info -->
+                            <div style="padding: 20px 15px; background: #fff;">
+                                <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #333; margin-bottom: 8px; line-height: 1.4; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
                                     {{ $product->getTranslation('name') }}
                                 </div>
-                                <!-- Price Tag -->
-                                <div style="background: #fff; padding: 10px 20px; font-size: 18px; font-weight: 900; color: #000; letter-spacing: 1px; display: inline-block; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                                <div style="font-size: 20px; font-weight: 900; color: #000; letter-spacing: 1px;">
                                     @php
                                         $price = home_base_price($product);
                                         echo is_numeric($price) ? format_price($price) : $price;
@@ -134,6 +135,34 @@ body { font-family: 'Montserrat', sans-serif !important; }
                     </div>
                 @endforeach
             </div>
+            
+            <style>
+                .new-in-item a:hover {
+                    box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+                    transform: translateY(-6px);
+                    border-color: #000 !important;
+                }
+                .new-in-item a:hover img {
+                    transform: scale(1.1);
+                }
+                @media (max-width: 1200px) {
+                    .new-in-section > div > div:last-child {
+                        grid-template-columns: repeat(4, 1fr) !important;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .new-in-section > div > div:last-child {
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 16px !important;
+                    }
+                }
+                @media (max-width: 576px) {
+                    .new-in-section > div > div:last-child {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 12px !important;
+                    }
+                }
+            </style>
         </div>
     </section>
 @endif

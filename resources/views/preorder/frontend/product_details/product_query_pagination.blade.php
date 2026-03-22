@@ -11,9 +11,9 @@
             <span class="mt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36">
                     <g id="Group_23928" data-name="Group 23928" transform="translate(-654 -2397)">
-                      <path id="Path_28707" data-name="Path 28707" d="M0,0H24V24H0Z" transform="translate(654 2397)" fill="#d43533"/>
+                      <path id="Path_28707" data-name="Path 28707" d="M0,0H24V24H0Z" transform="translate(654 2397)" fill="#1a2332"/>
                       <text id="Q" transform="translate(666 2414)" fill="#fff" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="-4.833" y="0">Q</tspan></text>
-                      <path id="Path_28708" data-name="Path 28708" d="M0,0H12L0,12Z" transform="translate(666 2421)" fill="#d43533"/>
+                      <path id="Path_28708" data-name="Path 28708" d="M0,0H12L0,12Z" transform="translate(666 2421)" fill="#1a2332"/>
                       <path id="Path_28711" data-name="Path 28711" d="M0,0H12L0,12Z" transform="translate(666 2421)" fill="#1b1b28" opacity="0.2"/>
                     </g>
                 </svg>

@@ -572,8 +572,8 @@
                     <ul class="list-inline mb-0">
                         @if ( get_setting('payment_method_images') !=  null )
                             @foreach (explode(',', get_setting('payment_method_images')) as $key => $value)
-                                <li class="list-inline-item mr-3">
-                                    <img src="{{ uploaded_asset($value) }}" height="20" class="mw-100 h-auto" style="max-height: 20px" alt="{{ translate('payment_method') }}">
+                                <li class="list-inline-item mr-4">
+                                    <img src="{{ uploaded_asset($value) }}" height="50" class="mw-100 h-auto" style="max-height: 50px; height: 50px;" alt="{{ translate('payment_method') }}">
                                 </li>
                             @endforeach
                         @endif

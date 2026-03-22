@@ -23,57 +23,66 @@
             </div>
         </div>
     </section>
-    <!-- All Categories -->
-    <section class="mb-5 pb-3">
-        <div class="container">
-            @foreach ($categories as $key => $category)
-                <div class="mb-4 bg-white rounded-0 border">
-                    <!-- Category Name -->
-                    <a href="{{ route('products.category', $category->slug) }}" class="text-dark p-4 d-flex align-items-center">
-                        <div class="size-60px overflow-hidden p-1 border mr-3">
-                            <img src="{{ uploaded_asset($category->banner) }}" alt="" class="img-fit h-100">
-                        </div>
-                        <div class="text-reset fs-16 fs-md-20 fw-700 hov-text-primary">
-                            {{ $category->getTranslation('name') }}
-                        </div>
-                    </a>
-                    <div class="px-4 py-2">
-                        <div class="row row-cols-xl-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gutters-16">
-                            @foreach ($category->childrenCategories as $key => $child_category)
-                                <div class="col text-left mb-3">
-                                    <!-- Sub Category Name -->
-                                    <h6 class="text-dark mb-3">
-                                        <a class="text-reset fw-700 fs-14 hov-text-primary"
-                                            href="{{ route('products.category', $child_category->slug) }}">
-                                            {{ $child_category->getTranslation('name') }}
-                                        </a>
-                                    </h6>
-
-                                    <!-- Sub-sub Categories -->
-                                    <ul
-                                        class="mb-2 list-unstyled has-transition mh-100 @if ($child_category->childrenCategories->count() > 5) less @endif">
-                                        @foreach ($child_category->childrenCategories as $key => $second_level_category)
-                                            <li class="text-dark mb-2">
-                                                <a class="text-reset fw-400 fs-14 hov-text-primary animate-underline-primary"
-                                                    href="{{ route('products.category', $second_level_category->slug) }}">
-                                                    {{ $second_level_category->getTranslation('name') }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                    @if ($child_category->childrenCategories->count() > 5)
-                                        <a href="javascript:void(1)"
-                                            class="show-hide-cetegoty text-primary hov-text-primary fs-12 fw-700">{{ translate('More') }}
-                                            <i class="las la-angle-down"></i></a>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
+    <!-- All Categories - Full Width Image Grid -->
+    <section class="mb-0 pb-0" style="background: #000;">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                @foreach ($categories as $key => $category)
+                    <div class="col-lg-4 col-md-6 col-sm-6 p-0">
+                        <a href="{{ route('products.category', $category->slug) }}" class="category-image-card" style="display: block; position: relative; overflow: hidden; height: 600px; text-decoration: none;">
+                            <!-- Category Image -->
+                            <img src="{{ uploaded_asset($category->banner) }}" alt="{{ $category->getTranslation('name') }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                            
+                            <!-- Overlay -->
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);">
+                                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; color: #fff; margin: 0; text-shadow: 3px 3px 6px rgba(0,0,0,0.7);">
+                                    {{ $category->getTranslation('name') }}
+                                </h2>
+                            </div>
+                        </a>
                     </div>
-
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
+        
+        <style>
+            .category-image-card:hover img {
+                transform: scale(1.08);
+            }
+            .category-image-card:hover {
+                box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+            }
+            
+            @media (max-width: 992px) {
+                .category-image-card {
+                    height: 500px !important;
+                }
+                .category-image-card h2 {
+                    font-size: 40px !important;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .category-image-card {
+                    height: 450px !important;
+                }
+                .category-image-card h2 {
+                    font-size: 32px !important;
+                    letter-spacing: 3px !important;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .category-image-card {
+                    height: 400px !important;
+                }
+                .category-image-card h2 {
+                    font-size: 28px !important;
+                    letter-spacing: 2px !important;
+                    padding: 30px !important;
+                }
+            }
+        </style>
     </section>
 @endsection
 
